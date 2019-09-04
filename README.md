@@ -17,7 +17,7 @@
   Step 2 :  Install vagrant  (https://www.vagrantup.com)
 
   Step 3 :  Download and  Vagrant file  
-       git clone https://github.com/malyabee/IaaC.git 
+       git clone https://github.com/malyabee/vagrant_ansible_lab.git
           or 
        Downlaod https://github.com/malyabee/IaaC/archive/master.zip and unzip master file 
        
