@@ -24,12 +24,12 @@
 
   Step 4  : starting virtual machines 
 
-       $ cd IaaC/ansible_lab
+       $ cd vagrant_ansible_lab
  
        $ vagrant up
 
 ### commands to login three virtual machines
-     cd IaaC/ansible_lab 
+     cd vagrant_ansible_lab
 
      vagrant ssh ansiblecontroller
      vagrant ssh node01
