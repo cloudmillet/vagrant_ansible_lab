@@ -19,7 +19,7 @@
   Step 3 :  Download and  Vagrant file  
        git clone https://github.com/malyabee/vagrant_ansible_lab.git
           or 
-       Downlaod https://github.com/malyabee/IaaC/archive/master.zip and unzip master file 
+       Downlaod https://github.com/malyabee/vagrant_ansible_lab/archive/master.zip and unzip master file 
        
 
   Step 4  : starting virtual machines 
