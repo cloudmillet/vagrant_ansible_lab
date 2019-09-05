@@ -1,0 +1,20 @@
+---
+- hosts: prod
+  become: yes
+  vars:
+    web: nginx
+  tasks:
+    - name: updating system
+      yum:
+        name: '*'
+        state: installed
+    - name: install httpd
+      yum:
+        name: "{{web}}"
+        state: installed
+    - name: service
+      service:
+        name: "{{web}}"
+        state: started
+        enabled: yes 
+
