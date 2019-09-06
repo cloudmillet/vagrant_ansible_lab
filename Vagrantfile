@@ -17,7 +17,7 @@ cat /vagrant/certificates/ansible_lab.pub >> /home/vagrant/.ssh/authorized_keys
 SCRIPT
 
 $ansiblescript = <<-SCRIPT
-sudo yum install ansible  ansible-doc -y 
+sudo yum install ansible  ansible-doc git -y 
 sudo cp -r /vagrant/certificates/ansible_lab /home/vagrant/.ssh/id_rsa
 sudo chmod 400  /home/vagrant/.ssh/id_rsa
 sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
