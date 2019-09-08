@@ -1,0 +1,23 @@
+---
+- name: deploy vsftpd
+  hosts: prod
+  become: yes
+  vars:
+    linux_service: vsftpd
+  tasks:
+    - name: vsftpd install 
+      package:
+        name: "{{linux_service}}"
+        state: latest
+    - name: enable vsftpd
+      service:
+        name: "{{linux_service}}"
+        enabled: true
+    - name: create sample file
+      copy:
+        content: "sample text\n"
+        dest: /var/ftp/pub/samplefile
+        force: no
+        mode: 0444
+...           
+
