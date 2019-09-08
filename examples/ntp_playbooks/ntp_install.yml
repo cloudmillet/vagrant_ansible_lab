@@ -1,0 +1,17 @@
+---
+- name: installing ntp
+  hosts: prod
+  become: yes
+  vars:
+    linux_service: ntpdate
+  tasks:
+    - name: ntp install
+      package:
+        name: "{{ linux_service }}"
+        state: present
+    - name: ntp strat  install 
+      service:
+        name: "{{linux_service}}"
+        state: started
+        enabled: true
+...
