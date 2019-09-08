@@ -1,0 +1,18 @@
+---
+- name: Install apache
+  hosts: prod
+  become: yes
+  vars:
+    apache: httpd
+  tasks:
+   - name: Install apache server
+     package:
+        name: "{{apache}}"
+        state: present
+   - name: enable apache
+     service:
+        name: "{{apache}}"
+        enabled: true
+...
+
+
