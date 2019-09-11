@@ -1,8 +1,0 @@
----
-- name: installing nginx
-  hosts: prod
-  become: yes
-  vars:
-    web: nginx
-  roles:
-    - web
