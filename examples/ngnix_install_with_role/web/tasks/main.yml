@@ -1,0 +1,11 @@
+---
+# tasks file for web
+- name: update
+  import_tasks: update.yml
+
+- name: install
+  import_tasks: web.yml
+
+- name: service start
+  import_tasks: service.yml
+
