@@ -1,0 +1,7 @@
+copy role_web directory to /etc/ansible/roles directory
+
+keep web any location
+
+run ansible-playbook ngnix.yml
+
+
