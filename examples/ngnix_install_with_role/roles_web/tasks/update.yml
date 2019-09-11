@@ -1,7 +1,0 @@
----
-- name: updating system
-  yum:
-    name: '*'
-    state: installed
- 
-
