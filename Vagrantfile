@@ -1,6 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+BOX_BASE = "centos/7"
+# for centos 8 
+# BOX_BASE = "generic/centos8"
+
 $commonscript = <<-SCRIPT
 sudo yum update -y
 sudo yum install python2 epel-release -y
@@ -28,7 +33,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "ansiblecontroller" do |ansiblecontroller|
 
          # Box
-         ansiblecontroller.vm.box = "centos/7"
+         ansiblecontroller.vm.box = BOX_BASE
 
          # Memory and CPU allocation
          ansiblecontroller.vm.provider "virtualbox" do |v|
@@ -52,7 +57,7 @@ Vagrant.configure("2") do |config|
          config.vm.define "node0#{i}" do |node|
 
           # Box
-          node.vm.box = "centos/7"
+          node.vm.box = BOX_BASE
 
           # Memory and CPU allocation
           node.vm.provider "virtualbox" do |v|
