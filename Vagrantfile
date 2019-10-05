@@ -2,9 +2,9 @@
 # vi: set ft=ruby :
 
 
-#BOX_BASE = "centos/7"
+BOX_BASE = "centos/7"
 # for centos 8 
-BOX_BASE = "generic/centos8"
+#BOX_BASE = "generic/centos8"
 
 $commonscript = <<-SCRIPT
 sudo yum update -y
@@ -28,6 +28,10 @@ sudo chmod 400  /home/vagrant/.ssh/id_rsa
 sudo chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
 SCRIPT
 
+# for centos8 
+#sudo yum install python3-pip -y
+#sudo pip3 install ansible
+
 Vagrant.configure("2") do |config|
 
     config.vm.define "ansiblecontroller" do |ansiblecontroller|
@@ -48,7 +52,7 @@ Vagrant.configure("2") do |config|
          ansiblecontroller.vm.hostname = "ansiblecontroller.example.com"
         
          # Mount  for certificates for CentOS 8
-         ansiblecontroller.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+         # ansiblecontroller.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
          # Installing required packages for ansible controller node
          ansiblecontroller.vm.provision "shell", inline: $commonscript
@@ -72,7 +76,7 @@ Vagrant.configure("2") do |config|
 
           node.vm.hostname = "node0#{i}.example.com"
           # Mount  for certificates for CentOS 8
-          node.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+          # node.vm.synced_folder ".", "/vagrant", type: "virtualbox"
              
           # Installing required packages for  node01
           node.vm.provision "shell", inline: $commonscript
