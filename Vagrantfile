@@ -2,9 +2,9 @@
 # vi: set ft=ruby :
 
 
-BOX_BASE = "centos/7"
+#BOX_BASE = "centos/7"
 # for centos 8 
-# BOX_BASE = "generic/centos8"
+BOX_BASE = "generic/centos8"
 
 $commonscript = <<-SCRIPT
 sudo yum update -y
@@ -46,6 +46,9 @@ Vagrant.configure("2") do |config|
 
          # Host name allocation
          ansiblecontroller.vm.hostname = "ansiblecontroller.example.com"
+        
+         # Mount  for certificates for CentOS 8
+         ansiblecontroller.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
          # Installing required packages for ansible controller node
          ansiblecontroller.vm.provision "shell", inline: $commonscript
@@ -68,7 +71,9 @@ Vagrant.configure("2") do |config|
           node.vm.network "private_network", ip: "192.168.22.1#{i}", virtualbox__intnet: "mynetwork01"
 
           node.vm.hostname = "node0#{i}.example.com"
-
+          # Mount  for certificates for CentOS 8
+          node.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+             
           # Installing required packages for  node01
           node.vm.provision "shell", inline: $commonscript
           node.vm.provision "shell", inline: $nodescript
