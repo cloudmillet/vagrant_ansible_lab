@@ -9,6 +9,7 @@ BOX_BASE = "centos/7"
 $commonscript = <<-SCRIPT
 sudo yum update -y
 sudo yum install python2 epel-release -y
+sudo yum install git -y
 sudo echo "192.168.22.10	ansiblecontroller.example.com ansiblecontroller" >> /etc/hosts
 sudo echo "192.168.22.11   node01.example.com 	node01" >> /etc/hosts
 sudo echo "192.168.22.12   node02.example.com      node02" >> /etc/hosts
