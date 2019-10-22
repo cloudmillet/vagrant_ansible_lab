@@ -52,3 +52,7 @@ https://sysadmincasts.com/episodes/47-zero-downtime-deployments-with-ansible-par
 
 Ubuntu based ansbile devlab available at  
 https://github.com/jweissig/episode-45 
+
+
+Mastering Ansible Book based examples
+https://github.com/PacktPublishing/Mastering-Ansible-Third-Edition
