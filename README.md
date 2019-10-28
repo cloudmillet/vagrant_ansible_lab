@@ -56,3 +56,7 @@ https://github.com/jweissig/episode-45
 
 Mastering Ansible Book based examples
 https://github.com/PacktPublishing/Mastering-Ansible-Third-Edition
+
+
+There is step by step guide to learn ansible
+https://github.com/leucos/ansible-tuto 
